@@ -116,8 +116,71 @@ console.log("*******************************");
 
    // 8. Less than or equal
    console.log(10 <= 10);
+  
+// Difference between =, == and ===
 
-// =, == and ===
+console.log("*******************************");
+
+// 3. Logical Operators - Will validate 2 different expression (condition) and return the result in form of boolean (true/false)
+
+    // 1. AND (&&) - (1>0) && (0>-9) - It will return true as a result only if both the condition are true
+    // 2. OR (||) - Either of the condition is true - true
+    // 3. Not (!) - Reverse the result - from true to false and vice versa
 
 
-// 3. Logical Operators - 
+// 1. AND (&&) - Both of the conditions are true 
+
+// true && true - true
+// true && false - false
+// false && true - false
+// false && false - false
+
+
+console.log("AND (&&)", (10>7) && (6>2))
+console.log("AND (&&)", (10>7) && (6>20))
+console.log("AND (&&)", (10>70) && (6>2))
+console.log("AND (&&)", (10>70) && (6>20))
+
+
+//2. OR (||) - Either of the condition is true
+
+// true || true - true
+// true || false - true
+// false || true - true
+// false || false - false
+
+console.log("OR (||)", (7>6) || (234>123))
+console.log("OR (||)", (7>6) || (234>1230));
+console.log("OR (||)", (7>60) || (234>123));
+console.log("OR (||)", (7>60000) || (234>123000))
+
+
+// 3. NOT (!) - Reverses the result
+// !true  = false
+// !false = true
+
+console.log("NOT (!)", !(10>4.5))
+console.log("NOT (!)", !(10>45))
+
+
+// 4. Assignment Operator (=) - Assign the value to a variable
+
+let i = 10
+
+// let i = 15
+
+// i = i + 5  // i += 5                   // i = 10 + 5 // i = 15
+
+i += 5 // i = i+5
+i -= 5 // i= i-5
+i *= 5 // i= i*5
+i /= 5 // i = i/5 
+
+
+// & - bitwise operator
+
+console.log(i);
+
+
+
+
