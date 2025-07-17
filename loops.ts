@@ -33,10 +33,14 @@ increment/decrement - Increment or decrement the value of the variable after eac
 */
 
 for(let i =1; i<6; i++){ // 1<6  1++ = 1+1 =2 , 2 < 6 3 5++ = 5+1 = 6
-    console.log(i) // 1 2 3 4 5
     // if(i==3){
     //     break
     // }
+    if(i==3){
+        continue // skip that particular iteration
+    }
+    console.log(i) // 1 2 3 4 5
+
 }
 
 console.log("********************************");
@@ -82,5 +86,5 @@ do{
 let k =10
 do{
     console.log(k) // 10 
-  //  k--
+    k--
 }while(k>=1); // k>0, k>=1, k!=0,

@@ -12,7 +12,7 @@
 
     // 6. union (combination of other data datatype) - (number | string)
     // 7. any
-    // 8. void - function
+    // 8. void(Nothing) - function
 
 
 
