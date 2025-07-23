@@ -169,10 +169,6 @@ console.log(arr1);
 // arrayName.includes(element)
 console.log(arr1.includes("Java"));
 
-
-// forEach(fun), map(fun), filter(fun), reduce(fun)
-
-
 let set = new Set([1,2,3,4,5,1,2,3,4])
 console.log(set)
 
@@ -192,3 +188,90 @@ while (true) {
 console.log(counter1);
 
 
+
+// forEach(fun), map(fun), filter(fun), reduce(fun)
+
+let arr7 = [10,20,30,40,50]
+
+// 12. forEach(fun) - Will not return anything.
+// Syntax:
+// arrayName.forEach(function(element, index, arrayName){})
+// element - The current element being processed in the array
+// index(Optional) - The index of the current element being processed in the array
+// arrayName(Optional) - The array the current element belongs to, or to which the current element
+
+
+for(let element of arr7){
+   console.log(element);
+}// Data driven testing---
+
+arr7.forEach((element, index)=>console.log(element,index))
+
+
+// 13. map(fun)  - Create a new array with the resultof call in the function on every element of an array
+// It will return the value as a result will be similair tto number of element that we have inside the original array
+// Syntax:
+// arrayName.map(function(element, index, arrayName){})
+
+let price = [100,200,300,400,500]
+let discount = 30 // 100 - 100*0.3 = 70
+
+const discountedPrice = price.map((number)=>{
+  return number - (number *30)/100
+})
+console.log(discountedPrice)
+
+
+// 14.filter(fun) - Create a new array with the result of call the function on every element of an array. The result will consits of only those values which passes the function.
+// Syntax:
+// arrayName.filter(function(element, index, arrayName){})
+
+// {name :"value"} // object
+
+let sales = [
+  {category : 'fashion', price : 1100000},
+  {category : 'electronics', price : 2000000},
+  {category : 'Mobile', price : 250000},
+  {category : 'Toys', price : 500000},
+  {category : 'Groceries', price : 1100000},
+]
+
+// let obj  = {category : 'fashion', sale : 1000000}
+// console.log(obj.sale);
+
+const filterResult = sales.filter((element =>element.price > 1000000))
+console.log(filterResult)
+
+for(let ele of filterResult){
+    console.log(ele.category);
+}
+
+// 15. reduce(fun, initialValue(Optional)) - Return us the result as a single value by reducing the array
+// Syntax:
+// arrayName.reduce(function(accumlator, element, index, arrayName){}, initialValue(optional))
+
+// accumulator - is the value that we are going to return at the end of the function
+// element - The current element being processed in the array
+// index(Optional) - The index of the current element being processed in the array
+// arrayName(Optional) - The array the current element belongs to, or to which the current element
+
+
+let variable = [10,20,30,40] // 10+20+30+40
+
+const total = variable.reduce((total, num)=> total *num)
+console.log(total)
+
+let sum = 0
+for(let num of variable){
+  sum = sum + num // sum = 0+10 = 10, sum = 10+20 = 30, 30+30 = 60, 60+40 = 100
+}
+console.log(sum);
+
+const totalSales = sales.reduce(function(total, num){
+  return total + num.price
+}, 0)
+console.log(totalSales)
+
+
+
+// String - 
