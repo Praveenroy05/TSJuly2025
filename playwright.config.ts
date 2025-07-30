@@ -24,7 +24,7 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 10 : 5, // 8 test cases to run at the same
+  workers: process.env.CI ? 10 : 1, // 8 test cases to run at the same
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html', // allure report . Monocart report
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -84,3 +84,7 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
+
+// fileName.spec.ts OR
+// fileName.test.ts
