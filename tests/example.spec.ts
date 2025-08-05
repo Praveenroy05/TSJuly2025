@@ -9,6 +9,10 @@ test('get started link',  async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
   await console.log("The link is working");
 
+  //page.getByText()
+
+
+  //await page.getByRole()
   // page.waitForTimeout(3000) - pending, successful, rejected
 
   // Check login is working with valid credetials
@@ -17,28 +21,16 @@ test('get started link',  async ({ page }) => {
   // fill the password
   // click the login button
   // verify the user is logged in
+// "(//div[@class='DayPicker-Body']//div[@class='DayPicker-Week']//div[@class='DayPicker-Day'])"
+  //await page.locator("div.DayPicker-Body .DayPicker-Week .DayPicker-Day").nth(14)
 
+ 
 
 });
 
 
 // async(At function level) -await(Step level - Wherever you are trying to perform the action) concept
 
-
-test("Title of the test case", async function(){
-  // Launch the url
-  // fill the username
-  // fill the password
-  // click the login button
-  // verify the user is logged in
-})
-
-
-test("Title of the test case for 2nd", async ()=>{})
-
-
-
-// browser and page
 
 
 
