@@ -6,7 +6,7 @@ test("Fill and validate the textbox", async ({page})=>{
    await page.goto("https://practicetestautomation.com/practice-test-login/")
    // input#username
    // fill(value) - fill the textbox with value
-   // pressSequentially(value) 
+   // pressSequentially(value) - fill the textbox with the value character by chracter
    await page.locator('input#username').fill("student")
    // toHaveValue(value) - validate the value of the textbox
    await expect(page.locator('input#username')).toHaveValue("student")
@@ -26,6 +26,6 @@ test("Fill and validate the textbox", async ({page})=>{
    await expect(page.locator("h1.post-title")).toHaveText("Logged In Successfully")
    await expect(page.locator("h1.post-title")).toContainText("Logged In")
 
-
+   await expect(page.getByRole('heading', { name: 'Logged In Successfully' })).toBeVisible()
 
 })
