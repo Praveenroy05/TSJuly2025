@@ -177,3 +177,7 @@ console.log(newarr2)
 
 console.log(newarr1[1])
 console.log(newarr2[1])
+
+
+const orderID = "| 68a73e15d2e3f0f153be5026 |"
+console.log(orderID.replaceAll("|", "").trim());

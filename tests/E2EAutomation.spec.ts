@@ -4,6 +4,7 @@
 // Fill all the mandatory fields and select the country
 // Place the order and capture the orderID
 // Go to Order History page and validate if the orderID is available
+// Go to the summary page and validate the orderID
 
 
 let username = "testnHNk@gmail.com"
@@ -68,17 +69,87 @@ test("E2E Automation scenario", async ({page})=>{
     await page.getByText("Place Order").click()
     await expect(page.locator("h1.hero-primary")).toContainText("Thankyou")
 
-    const orderID = await page.locator(".em-spacer-1 .ng-star-inserted").textContent()
+    const order = await page.locator(".em-spacer-1 .ng-star-inserted").textContent()
+    const orderID = order!.replaceAll("|","").trim()
     console.log(orderID);
+
+    await page.locator("button[routerlink='/dashboard/myorders']").click()
+
+    await expect(page.locator("table tbody")).toBeVisible()
+
+    // To iterate through the table we have to get the total number of rows
+
+    const rows = page.locator("table tbody tr")
+    const rowCount = await rows.count()
+    for(let i=0; i<rowCount; i++){
+        const orderText = await rows.nth(i).locator("th").innerText()
+        if(orderText == orderID){
+            await rows.nth(i).locator("button").first().click()
+            break
+        }
+    }
+
+    await expect(page.locator("div.col-text")).toHaveText(orderID)
+    await expect(page.locator("div.address p").first()).toHaveText(username)
+
+
 
 
 
 
     // table - development of a table element
-    // thead - Table heading
-    // tbody - Table body - WHich will consits of all the data inside the table
-    // tr - Table row
-    // td - Table definition - Table column
+        // thead - Table heading
+        // tbody - Table body - WHich will consits of all the data inside the table
+            // tr - Table row
+                // td - Table definition - Table column
 
 
+})
+
+test("E2E Automation scenario using filter on locator", async ({page})=>{
+    await page.goto("https://rahulshettyacademy.com/client")
+
+    await page.getByPlaceholder("email@example.com").clear()
+    await page.getByPlaceholder("email@example.com").fill(username)
+
+    await page.getByPlaceholder("enter your passsword").fill(password)
+    await page.getByRole('button', {name:'Login'}).click()
+    await expect(page.locator(".fa-sign-out")).toBeVisible()
+    await page.pause()
+
+    const products = page.locator("div.card-body")
+    await products.last().waitFor()
+    await products.filter({hasText:`${productName}`}).locator("button").last().click()
+    await expect(page.locator("#toast-container")).toHaveText("Product Added To Cart")
+
+    await page.locator("[routerlink='/dashboard/cart']").click({timeout:90000})
+    await page.getByRole('button', {name:'Checkout'}).click()
+
+    await expect(page.locator("div.user__name input").first()).toHaveValue(username)
+    // we have to use - toHaveValue()
+    await page.locator("div.user__name input").last().pressSequentially("in")
+
+    const ddResult = page.locator("section.ta-results button") // >1
+
+    await ddResult.first().waitFor()
+
+    await ddResult.filter({hasText:`${country}`}).click()
+
+    await page.getByText("Place Order").click()
+    await expect(page.locator("h1.hero-primary")).toContainText("Thankyou")
+
+    const order = await page.locator(".em-spacer-1 .ng-star-inserted").textContent()
+    const orderID = order!.replaceAll("|","").trim()
+    console.log(orderID);
+
+    await page.locator("button[routerlink='/dashboard/myorders']").click()
+
+    await expect(page.locator("table tbody")).toBeVisible()
+
+    // To iterate through the table we have to get the total number of rows
+
+    const rows = page.locator("table tbody tr")
+    await rows.filter({hasText:`${orderID}`}).locator("button").first().click()
+    await expect(page.locator("div.col-text")).toHaveText(orderID)
+    await expect(page.locator("div.address p").first()).toHaveText(username)
 })
