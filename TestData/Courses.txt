@@ -1,0 +1,36 @@
+Data Science:
+
+The Data Science Course: Complete Data Science Bootcamp 2023 - 32 Hours
+Python for Data Science and Machine Learning Bootcamp - 25 hours
+Machine Learning, Data Science and Generative AI with Python - 19 hours
+Data Science A-Z™: Hands-On Exercises & ChatGPT Bonus [2023] - 22 hours
+
+Total - 98 hours
+
+Python:
+
+Complete Python Developer in 2023: Zero to Mastery - 31 hours - 20 days (15th Feb'24)
+Complete Backend Development 2023 Bundle - Python Roadmap - 21 hours - 21 Days (15th Jan'24)
+Python for Machine Learning & Data Science Masterclass - 44 hours
+Django Rest Framework - 7 hours - 5 days (10th Jan'24)
+Python Complete Masterclass for Beginners - 30 hours
+Python Mega Course: Learn Python in 60 Days, Build 20 Apps - 52 hours
+Data Structures and Algorithms Python: The Complete Bootcamp - 20 Hours
+A deep understanding of deep learning (with Python intro) - 58 Hours
+100 Days of Code: The Complete Python Pro Bootcamp for 2023 - 58 Hours
+
+Total - 324 Hours - 365 days 
+
+Cypress/PW: - 31st Dec'23
+
+Cypress -Modern Automation Testing from Scratch + Frameworks - 17 Hours - 17 Days
+
+Playwright JS Automation Testing from Scratch with Framework - 17 Hours - 17 Days
+
+Perfrmance Testing - Jmeter  - 9 Hours - 9 Days
+
+
+
+
+
+
