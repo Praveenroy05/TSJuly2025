@@ -138,7 +138,7 @@ console.log(array1);
 console.log(array1.slice(2,7))
 
 
-// 8. indexOf(element, startIndex) - Returns the index of first occurance of an element froman array
+// 8. indexOf(element, startIndex) - Returns the index of first occurance of an element from an array
 // Syntax:
 // arrayName.indexOf(element)
 console.log(array1.indexOf(10))
