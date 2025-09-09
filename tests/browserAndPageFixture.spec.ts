@@ -11,19 +11,20 @@ import {test, expect} from '@playwright/test'
 test("Browser fixture", async function({browser}){
     // browser Context - newContext()
     const context = await browser.newContext() 
+    const page = await context.newPage()
     // Create a page - newPage
-    const [page, page1, page2] = await Promise.all([
-    context.newPage(),
-    context.newPage(),
-    context.newPage(),
-]);
+//     const [page, page1, page2] = await Promise.all([
+//     context.newPage(),
+//     context.newPage(),
+//     context.newPage(),
+// ]);
 
-// Navigate to URLs in parallel
-await Promise.all([
-    page.goto("https://google.com"),
-    page1.goto("https://facebook.com"),
-    page2.goto("https://linkedin.com"),
-]);
+// // Navigate to URLs in parallel
+// await Promise.all([
+//     page.goto("https://google.com"),
+//     page1.goto("https://facebook.com"),
+//     page2.goto("https://linkedin.com"),
+// ]);
    
 })
 
