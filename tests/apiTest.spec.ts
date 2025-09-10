@@ -10,9 +10,6 @@ const orderURL = "https://rahulshettyacademy.com/api/ecom/order/create-order"
 const orderPayload = {orders: [{country: "Argentina", productOrderedId: "68a961719320a140fe1ca57c"}]}
 
 let username = "testnHNk@gmail.com"
-let password = "Testing@1234"
-let productName = "IPHONE 13 PRO"
-let country = "Singapore"
 
 let token
 let orderID

@@ -47,4 +47,12 @@ console.log(Human.skill[2].three);
 
 console.log(Human["age"]); // "age"
 
+// Class 
+
+// let i =10 // variable- properties
+
+// function demo(){ // function - method
+
+// }
+
 
