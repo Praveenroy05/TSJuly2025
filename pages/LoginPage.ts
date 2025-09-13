@@ -11,7 +11,7 @@ export class LoginPage {
     private password
     private loginBtn
     errorMessage
-    homePageIdentifier
+    
 
     constructor(page) {
         this.testPage = page
@@ -19,7 +19,6 @@ export class LoginPage {
         this.password = this.testPage.getByPlaceholder("enter your passsword")
         this.loginBtn = this.testPage.locator("#login")
         this.errorMessage = this.testPage.locator("#toast-container")
-        this.homePageIdentifier = this.testPage.locator(".fa-sign-out")
     }
 
 

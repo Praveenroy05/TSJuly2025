@@ -41,6 +41,7 @@ export default defineConfig({
     screenshot : 'on',
     video: 'on',
     headless : false,
+    // viewport: { width: 100, height: 100 },
   },
 
   /* Configure projects for major browsers */
