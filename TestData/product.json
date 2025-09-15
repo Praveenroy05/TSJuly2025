@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://rahulshettyacademy.com/client",
+    "username": "testnHNk@gmail.com",
+    "password": "Testing@1234",
+    "productName": "iphone 13 pro",
+    "addToCartSuccessMsg": "Product Added To Cart"
+  },
+  {
+    "url": "https://rahulshettyacademy.com/client",
+    "username": "testnHNk@gmail.com",
+    "password": "Testing@1234",
+    "productName": "ZARA COAT 3",
+    "addToCartSuccessMsg": "Product Added To Cart"
+  },
+  {
+    "url": "https://rahulshettyacademy.com/client",
+    "username": "testnHNk@gmail.com",
+    "password": "Testing@1234",
+    "productName": "ADIDAS ORIGINAL",
+    "addToCartSuccessMsg": "Product Added To Cart"
+  }
+
+]

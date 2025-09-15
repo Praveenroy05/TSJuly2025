@@ -51,6 +51,7 @@ console.log("**********************");
 // Syntax:
 // for(declare variable of arrayName){...}
 // Variable - will get the value from the array one by one
+// let array4 = [10,20,30,40,50,60]
 
 let counter = 0
 for(let value of array4){

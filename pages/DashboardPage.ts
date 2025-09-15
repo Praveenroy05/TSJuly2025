@@ -1,24 +1,27 @@
+import { Page } from "playwright"
+
 export class DashboardPage {
 
     private page
     private products
     homePageIdentifier
     addToCartSuccessMsg
-    private viewPageProductName
-    private viewPageProductPrice
-    homePageProductPrice
+    viewPageProductName
+    viewPageProductPrice
+    homePageProductPrice: string
 
-    constructor(page){
+    constructor(page:Page){
         this.page = page
         this.products = this.page.locator("div.card-body")
         this.homePageIdentifier = this.page.locator(".fa-sign-out")
         this.addToCartSuccessMsg = this.page.locator("#toast-container")
         this.viewPageProductName = this.page.locator("div.rtl-text h2")
         this.viewPageProductPrice = this.page.locator("div.rtl-text h3")
+        this.homePageProductPrice = ""
     }
 
 
-    async searchAndAddProductToCart(productName){
+    async searchAndAddProductToCart(productName: string){
         await this.products.last().waitFor()
         const countOfProduct = await this.products.count()
 
@@ -31,7 +34,7 @@ export class DashboardPage {
         }
     }
 
-    async searchAndValidateProductDetails(productName){
+    async searchAndValidateProductDetails(productName: string){
         await this.products.last().waitFor()
         const countOfProduct = await this.products.count()
 

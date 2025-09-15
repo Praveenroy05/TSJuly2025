@@ -9,8 +9,8 @@ let productName = "iphone 13 pro"
 let addToCartSuccessMsg = "Product Added To Cart"
 
 
-let loginPage
-let dashboardPage
+let loginPage : LoginPage
+let dashboardPage : DashboardPage
 test.beforeEach(async ({page})=>{
     loginPage = new LoginPage(page)
     dashboardPage = new DashboardPage(page)

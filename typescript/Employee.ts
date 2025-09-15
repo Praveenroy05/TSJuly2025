@@ -109,4 +109,7 @@ emp1.employeeInformation()
 Employee.company
 Employee.companyName()
 
+console.log(emp);
+console.log(emp1);
+
 

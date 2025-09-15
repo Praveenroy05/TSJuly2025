@@ -21,6 +21,8 @@ Object reference = obj
 
 */
 
+import data from '../TestData/login.json'
+console.log(data.errorMessage);
 
 
 const Human =
@@ -33,7 +35,11 @@ const Human =
         city: "Hyd",
         state: "TS"
     },
-    skill : [{one:"Java"}, {two:"JS"}, {three:"Python"}],
+    skill : [
+        {one:"Java"}, 
+        {two:"JS"}, 
+        {three:"Python"}
+    ],
     humanInfo : function(){
         console.log(Human.name, Human.age, Human.address);
     }
@@ -55,4 +61,11 @@ console.log(Human["age"]); // "age"
 
 // }
 
+console.log(Human.skill[2].three);
 
+import product from '../TestData/product.json'
+
+for(let data of product){
+    for(let product of data.productName)
+        console.log(product);
+}
