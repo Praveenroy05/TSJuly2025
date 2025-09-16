@@ -1,7 +1,19 @@
 import {test, expect} from '@playwright/test'
 import { LoginPage } from '../pages/LoginPage'
 import { DashboardPage } from '../pages/DashboardPage'
-import products from '../TestData/product.json'
+import { ExcelUtils } from '../utils/ExcelUtils'
+import path from 'path'
+
+const filePath = path.join(__dirname, "../TestData/excel.xlsx")
+const sheetName = "Login"
+
+let products : any
+try{
+    products = ExcelUtils.getExcelData(filePath, sheetName)
+}
+catch(Error){
+    console.log(Error);
+}
 
 
 let loginPage : LoginPage
@@ -18,7 +30,7 @@ for(let product of products){
         await loginPage.validLogin(product.username, product.password)
         await expect(dashboardPage.homePageIdentifier).toBeVisible()
         await dashboardPage.searchAndAddProductToCart(product.productName)
-        await expect(dashboardPage.addToCartSuccessMsg).toHaveText(product.addToCartSuccessMsg)
+        await expect(dashboardPage.addToCartSuccessMsg).toHaveText(product.cartSuccessMsg)
     })
 
     test(`Search and validate the product details for ${product.productName}`, async ()=>{
