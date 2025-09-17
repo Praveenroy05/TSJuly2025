@@ -1,15 +1,28 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv'
+import path from 'path';
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+  //require('dotenv').config();
+  // dotenv - is to load the data from the .env file
+  // process.env - will read the data from .env file
 
-// 1. FullyParallel = true and workers = 1
-// 2. FullyParallel = false and workers = 1
-// 3. FullyParallel = true and workers  >1 - Test case inside the files will also be executed in the parallel mode
-// 4. FullyParallel = false and workers >1 - Test files will start execution in the parallel mode whereas test case inside the file will run in the sequential order
+  const ENV_NAME = process.env.ENV || 'qa'
+
+  dotenv.config({
+    path: path.join(__dirname, 'TestData', `data.env.${ENV_NAME}`)
+  })
+
+  // console.log(process.env);
+  // console.log(process.env.BASE_URL);
+  // console.log(process.env.EMAIL);
+
+  // console.log(process.env.PASSWORD);
+
+
 
 
 /**
@@ -93,3 +106,8 @@ export default defineConfig({
 
 // fileName.spec.ts OR
 // fileName.test.ts
+
+// 1. FullyParallel = true and workers = 1
+// 2. FullyParallel = false and workers = 1
+// 3. FullyParallel = true and workers  >1 - Test case inside the files will also be executed in the parallel mode
+// 4. FullyParallel = false and workers >1 - Test files will start execution in the parallel mode whereas test case inside the file will run in the sequential order

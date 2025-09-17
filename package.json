@@ -2,7 +2,9 @@
   "name": "julyts2025",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:prod": "set ENV=prod&& npx playwright test browserAndPageFixture.spec.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -10,6 +12,7 @@
   "devDependencies": {
     "@playwright/test": "^1.54.1",
     "@types/node": "^24.1.0",
+    "dotenv": "^17.2.2",
     "xlsx": "^0.18.5"
   }
 }

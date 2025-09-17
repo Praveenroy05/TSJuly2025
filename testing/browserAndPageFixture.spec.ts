@@ -12,6 +12,10 @@ test("Browser fixture", async function({browser}){
     // browser Context - newContext()
     const context = await browser.newContext() 
     const page = await context.newPage()
+    const context1 = await browser.newContext() 
+    const page1 = await context.newPage()
+
+
     // Create a page - newPage
 //     const [page, page1, page2] = await Promise.all([
 //     context.newPage(),
