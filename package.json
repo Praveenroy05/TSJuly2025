@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:prod": "set ENV=prod&& npx playwright test browserAndPageFixture.spec.ts"
+    "test:prod": "set ENV=prod&& npx playwright test",
+    "test:smoke" : "npx playwright test --grep @smoke",
+    "test:regression" : "npx playwright test --grep @regression",
+    "fullTest" : "npx playwright test",
+    "smokeAndRegression" : "npx playwright test --grep (?=.*@smoke)(?=.*@regression)"
   },
   "keywords": [],
   "author": "",

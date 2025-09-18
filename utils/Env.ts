@@ -3,3 +3,16 @@ export const ENV = {
     username : process.env.EMAIL,
     password: process.env.PASSWORD
 }
+
+
+
+// Annotations
+// tags - smoke, regression
+
+
+// Allure report / Monocart report
+
+// GitHub
+// Jenkins
+// GenAI - Prompt Engineering and Playwright MCP
+// Screenshot - 

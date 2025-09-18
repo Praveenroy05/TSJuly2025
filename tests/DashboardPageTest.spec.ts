@@ -20,12 +20,12 @@ test.beforeEach(async ({page})=>{
 })
 
 
-test("Add the product to the cart validation", async ()=>{
+test("Add the product to the cart validation",{tag: ['@smoke', '@api']}, async ()=>{
     await dashboardPage.searchAndAddProductToCart(productName)
     await expect(dashboardPage.addToCartSuccessMsg).toHaveText(addToCartSuccessMsg)
 })
 
-test("Search and validate the product details", async ()=>{
+test("Search and validate the product details", {tag: '@api'}, async ()=>{
     await dashboardPage.searchAndValidateProductDetails(productName)
     await expect(dashboardPage.viewPageProductName).toHaveText(productName)
     await expect(dashboardPage.viewPageProductPrice).toHaveText(await dashboardPage.homePageProductPrice)

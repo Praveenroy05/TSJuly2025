@@ -25,7 +25,7 @@ let dashboardPage : DashboardPage
     })
 
 for(let product of products){
-    test(`Add the product to the cart for ${product.productName}`, async ()=>{
+    test(`Add the product to the cart for ${product.productName}`,{tag: '@smoke'}, async ()=>{
         await loginPage.launchURL(product.url)
         await loginPage.validLogin(product.username, product.password)
         await expect(dashboardPage.homePageIdentifier).toBeVisible()
@@ -33,7 +33,7 @@ for(let product of products){
         await expect(dashboardPage.addToCartSuccessMsg).toHaveText(product.cartSuccessMsg)
     })
 
-    test(`Search and validate the product details for ${product.productName}`, async ()=>{
+    test(`Search and validate the product details for ${product.productName}`, {tag: ['@smoke', '@api']},async ()=>{
         await loginPage.launchURL(product.url)
         await loginPage.validLogin(product.username, product.password)
         await expect(dashboardPage.homePageIdentifier).toBeVisible()
