@@ -39,7 +39,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 10 : 5, // 8 test cases to run at the same
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html', // allure report . Monocart report
+  reporter: [['html'], ['line'], ['allure-playwright'], ['monocart-reporter']], // allure report . Monocart report
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
    timeout : 60000,
   expect:{
@@ -53,7 +53,7 @@ export default defineConfig({
     trace: 'on',
     screenshot : 'on',
     video: 'on',
-    headless : false,
+    headless : true,
     // viewport: { width: 100, height: 100 },
   },
 

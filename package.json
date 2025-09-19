@@ -4,10 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test:prod": "set ENV=prod&& npx playwright test",
-    "test:smoke" : "npx playwright test --grep @smoke",
-    "test:regression" : "npx playwright test --grep @regression",
-    "fullTest" : "npx playwright test",
-    "smokeAndRegression" : "npx playwright test --grep (?=.*@smoke)(?=.*@regression)"
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:regression": "npx playwright test --grep @regression",
+    "fullTest": "npx playwright test",
+    "smokeAndRegression": "npx playwright test --grep (?=.*@smoke)(?=.*@regression)"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,10 @@
   "devDependencies": {
     "@playwright/test": "^1.54.1",
     "@types/node": "^24.1.0",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.1",
     "dotenv": "^17.2.2",
+    "monocart-reporter": "^2.9.22",
     "xlsx": "^0.18.5"
   }
 }

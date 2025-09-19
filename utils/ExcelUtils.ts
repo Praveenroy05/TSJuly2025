@@ -20,6 +20,11 @@ export class ExcelUtils{
 
     }
 
+
+    static takeScreenshot({}){
+        
+    }
+
 }
 
 // 

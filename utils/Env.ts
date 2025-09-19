@@ -10,7 +10,7 @@ export const ENV = {
 // tags - smoke, regression
 
 
-// Allure report / Monocart report
+// html, Allure report / Monocart report
 
 // GitHub
 // Jenkins
