@@ -10,6 +10,20 @@
  // 4. Develope the test case and make any necessary changes inside your local system.
  // 5. Add all the changes to your local git  - git add .
  // 6. Commit the changes in your local git - git commit -m "message". Ex: - git commit -m "added git"
+    // 6.1 - You can rebase your changes with the master branch
+    // 6.2  - Move to the master branch - git checkout master
+    // 6.3  - Pull all the changes into local master - git pull
+    // 6.4 - Move to your featurebranch - git checkout dashboardPage
+    // 6.5 - Rebase all the changes from master branch to featurebranch
+    // git rebase origin/master
+
+ // 7. Push all the changes to the remote repository - git push -u origin branchName - Ex: - git push -u origin dashboardPage
+ // 8. Raise a Pull Request (PR)
+
+ // Again you started working on a new requirement:
+
+ // 9. Switch to master branch - git checkout branchName - Need to pull all the recent changes to your local system - 
+ // 10. Follw the same steps from #3 to #8 everytime.
 
 
 
