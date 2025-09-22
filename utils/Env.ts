@@ -8,11 +8,11 @@ export const ENV = {
 
 // Annotations
 // tags - smoke, regression
-
-
 // html, Allure report / Monocart report
+// Screenshot -
 
-// GitHub
+// GitHub - 
 // Jenkins
+
 // GenAI - Prompt Engineering and Playwright MCP
-// Screenshot - 
+ 
